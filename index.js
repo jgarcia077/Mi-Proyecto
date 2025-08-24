@@ -22,7 +22,7 @@ function createBook(title, author, genre, isbn) {
 }
 
 // Ejemplo de uso
-const book1 = createBook("Satanas", "Mario Mendoza", "Novela", "978-607-111-222-3");
+const book1 = createBook("Satanas", "Mario Mendoza", "Novela", "1998");
 console.log("1️ - Libro creado:", book1);
 
 // 2️ Función para agregar libro a la biblioteca
@@ -34,7 +34,7 @@ function addBookToLibrary(books, title, author, genre, isbn) {
 }
 
 // Ejemplo de uso
-const book2 = addBookToLibrary(library, "La importancia de morir a tiempo", "Mario Mendoza", "Novela", "978-607-111-333-4");
+const book2 = addBookToLibrary(library, "La importancia de morir a tiempo", "Mario Mendoza", "Novela", "1999");
 console.log(" 2 - Libro agregado a la biblioteca:", book2);
 
 // 3️ Función para eliminar un libro de la biblioteca
@@ -83,7 +83,8 @@ console.log(" Libros prestados:", borrowedBooks);
 
 // 5️ Función para devolver un libro
 // Restaura propiedades del libro, calcula multa si corresponde y elimina del Map de prestados
-function returnBook(books, borrowedBooks, bookId) {
+
+function returnBook(books, borrowedBooks, bookId, fineRate = 0.5) {
   const book = borrowedBooks.get(bookId);
   if (!book) {
     return { success: false, message: `El libro con ID: ${bookId} no está prestado`, fine: 0 };
@@ -91,9 +92,7 @@ function returnBook(books, borrowedBooks, bookId) {
   const today = new Date();
   let fine = 0;
   if (today > book.dueDate) {
-    const diffTime = today - book.dueDate;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    fine = diffDays * 1000;  // tarifa ejemplo por día
+    fine = calculateFine(book.dueDate, fineRate);
   }
   book.isAvailable = true;
   book.borrowedBy = null;
@@ -110,6 +109,7 @@ console.log(" Libros prestados después de devolver:", borrowedBooks);
 
 // 6️ Función para calcular multa por retraso
 // Devuelve 0 si no hay retraso, o la multa calculada
+
 function calculateFine(dueDate, fineRate = 0.50) {
   const today = new Date();
   if (today <= dueDate) return 0;
@@ -126,14 +126,14 @@ console.log("6️ -  Multa calculada:", multa);
 
 // 7️ Función para buscar libros por criterios
 // Devuelve libros cuyo título, autor o género coincida con el criterio
-function searchBooks(books, criteria) {
+const searchBooks = (books, criteria) => {   //Se investiga y se ajusta con una arrow functions
   const lowerCriteria = criteria.toLowerCase();
   return books.filter(book =>
     book.title.toLowerCase().includes(lowerCriteria) ||
     book.author.toLowerCase().includes(lowerCriteria) ||
     book.genre.toLowerCase().includes(lowerCriteria)
   );
-}
+};
 
 // Ejemplo de uso
 const searchResult = searchBooks(library, "Mario");
@@ -141,10 +141,10 @@ console.log("7️ - Libros encontrados por 'Mario':", searchResult);
 
 // 8️ Función para obtener libros por género
 // Devuelve libros que pertenecen a un género específico
-function getBooksByGenre(books, genre) {
+const getBooksByGenre = (books, genre) => {   //Se investiga y se ajusta con una arrow functions
   const lowerGenre = genre.toLowerCase();
   return books.filter(book => book.genre.toLowerCase() === lowerGenre);
-}
+};
 
 // Ejemplo de uso
 const genreBooks = getBooksByGenre(library, "Novela");
@@ -166,7 +166,7 @@ function getOverdueBooks(borrowedBooks, fineRate = 0.5) {
 
 // Ejemplo de uso
 const book5 = {
-  id: 201,
+  id: 2000,
   title: "Don Quijote",
   author: "Miguel de Cervantes",
   genre: "Novela",
@@ -180,7 +180,7 @@ console.log("9️ - Libros vencidos:", getOverdueBooks(borrowedBooks));
 
 // 10 Función para generar reporte de la biblioteca
 // Devuelve estadísticas: total de libros, prestados, disponibles, vencidos y multas totales
-function generateLibraryReport(books, borrowedBooks, fineRate = 1000) {
+function generateLibraryReport(books, borrowedBooks, fineRate = 0.5) {
   const totalBooks = books.length;
   const totalBorrowed = borrowedBooks.size;
   const availableBooks = books.filter(book => book.isAvailable).length;
