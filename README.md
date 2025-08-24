@@ -1,6 +1,7 @@
 # Sistema de Gestión de Biblioteca
 
-Descripción
+- Descripción
+
 Este proyecto es un **Sistema de Gestión de Biblioteca** desarrollado en **Node.js**, que permite administrar libros, registrar préstamos, devoluciones, realizar búsquedas y generar reportes.  
 Su objetivo es simular de forma sencilla el funcionamiento de una biblioteca real.
 
@@ -11,7 +12,6 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 *Buscar libros - Buscar por título, autor o género.  
 *Generar reportes - Reporte de libros disponibles, prestados, vencidos y cálculo de multas.  
 
-
 # Tecnologías utilizadas
 - *Node.js (JavaScript en servidor)  
 - *npm (gestor de dependencias)  
@@ -19,14 +19,23 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 - *GitHub (repositorio remoto)  
 
 # Instalar dependencias
-- npm install
+# Requisitos previos
+Antes de ejecutar el proyecto asegúrate de tener instalado:
+- [Node.js](https://nodejs.org/) (incluye `npm`)
+- Git
+. npm install 
+
+Puedes verificarlo con los siguientes comandos:
+node -v
+npm -v
+git --version
 
 # Ejecutar el proyecto:
 
 - node index.js
 - npm start
 
-# algunos ejemplos uso del sistema
+# Algunos ejemplos uso del sistema
 
 - createBook("Cien años de soledad", "Gabriel García Márquez", "Novela")
 
@@ -61,10 +70,8 @@ Durante el desarrollo del proyecto se presentaron varios retos importantes:
 - En varios momentos se identificaron **falencias de base en los conocimientos previos**, lo que exigió dedicar más tiempo a la práctica y la revisión de ejemplos.  
 - Se utilizó el apoyo de **herramientas de inteligencia artificial** como complemento para resolver dudas puntuales y mejorar la calidad del código.
 
-
 # Instalación y ejecución
 
 1. Clonar el repositorio:
-```bash
 git clone https://github.com/jgarcia077/Mi-Proyecto.git
 cd Mi-Proyecto
