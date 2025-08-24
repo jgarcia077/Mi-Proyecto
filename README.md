@@ -24,6 +24,43 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 # Ejecutar el proyecto:
 
 - node index.js
+- npm start
+
+# algunos ejemplos uso del sistema
+
+- createBook("Cien años de soledad", "Gabriel García Márquez", "Novela")
+
+# Prestar un libro
+- borrowBook(1, "Usuario01", "2025-09-10")
+
+# Devolver un libro
+- returnBook(1, "Usuario01")
+
+# Buscar libros
+- searchBooks("soledad") 
+// Devuelve coincidencias con "Cien años de soledad"
+
+# Generar reporte
+- getReport()
+// Devuelve cantidad de libros prestados, disponibles, vencidos y multas
+
+# Ejemplo de reporte
+
+{
+  "totalBooks": 5,
+  "borrowedBooks": 2,
+  "availableBooks": 3,
+  "overdueBooks": 1,
+  "totalFines": 2000
+}
+##  Dificultades encontradas
+Durante el desarrollo del proyecto se presentaron varios retos importantes:
+
+- Fue necesario **investigar de manera autónoma**, revisando documentación y tutoriales en video para reforzar los conceptos que no habían quedado claros en el semestre anterior.  
+- La **organización del código** representó un desafío inicial, ya que había que estructurar las funciones y módulos de forma ordenada y entendible.  
+- En varios momentos se identificaron **falencias de base en los conocimientos previos**, lo que exigió dedicar más tiempo a la práctica y la revisión de ejemplos.  
+- Se utilizó el apoyo de **herramientas de inteligencia artificial** como complemento para resolver dudas puntuales y mejorar la calidad del código.
+
 
 # Instalación y ejecución
 
@@ -31,4 +68,3 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 ```bash
 git clone https://github.com/jgarcia077/Mi-Proyecto.git
 cd Mi-Proyecto
-
