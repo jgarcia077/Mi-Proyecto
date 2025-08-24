@@ -19,7 +19,7 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 - *GitHub (repositorio remoto)  
 
 # Instalar dependencias
-# Requisitos previos
+- Requisitos previos
 Antes de ejecutar el proyecto asegúrate de tener instalado:
 - [Node.js](https://nodejs.org/) (incluye `npm`)
 - Git
@@ -39,17 +39,17 @@ git --version
 
 - createBook("Cien años de soledad", "Gabriel García Márquez", "Novela")
 
-# Prestar un libro
+/ Prestar un libro
 - borrowBook(1, "Usuario01", "2025-09-10")
 
-# Devolver un libro
+/ Devolver un libro
 - returnBook(1, "Usuario01")
 
-# Buscar libros
+/ Buscar libros
 - searchBooks("soledad") 
 // Devuelve coincidencias con "Cien años de soledad"
 
-# Generar reporte
+/ Generar reporte
 - getReport()
 // Devuelve cantidad de libros prestados, disponibles, vencidos y multas
 
