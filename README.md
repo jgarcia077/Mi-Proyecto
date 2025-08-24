@@ -18,9 +18,17 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 - *Git (control de versiones)  
 - *GitHub (repositorio remoto)  
 
+# Instalar dependencias
+- npm install
+
+# Ejecutar el proyecto:
+
+- node index.js
+
 # Instalación y ejecución
 
 1. Clonar el repositorio:
 ```bash
 git clone https://github.com/jgarcia077/Mi-Proyecto.git
 cd Mi-Proyecto
+
