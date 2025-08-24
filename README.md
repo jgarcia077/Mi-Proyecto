@@ -23,7 +23,7 @@ Agregar libros - Registrar nuevos libros en la biblioteca.
 Antes de ejecutar el proyecto asegúrate de tener instalado:
 - [Node.js](https://nodejs.org/) (incluye `npm`)
 - Git
-. npm install 
+- npm install 
 
 Puedes verificarlo con los siguientes comandos:
 node -v
