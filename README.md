@@ -62,6 +62,20 @@ git --version
   "overdueBooks": 1,
   "totalFines": 2000
 }
+
+# Funciones implementadas según la guía
+
+- createBook(title, author, genre, isbn) → Crea un nuevo libro.
+- addBookToLibrary(books, title, author, genre, isbn) → Agrega libro a la biblioteca.
+- removeBookFromLibrary(books, id) → Elimina un libro por ID.
+- borrowBook(books, borrowedBooks, bookId, borrowerName, days=14) → Registra préstamo de un libro.
+- returnBook(books, borrowedBooks, bookId) → Registra devolución y calcula multa.
+- calculateFine(dueDate, fineRate=0.50) → Calcula multa por retraso.
+- searchBooks(books, criteria) → Busca libros por título, autor o género.
+- getBooksByGenre(books, genre) → Lista libros por género.
+- getOverdueBooks(borrowedBooks, fineRate) → Muestra libros vencidos y multas.
+- generateLibraryReport(books, borrowedBooks) → Genera un reporte completo.
+
 ##  Dificultades encontradas
 Durante el desarrollo del proyecto se presentaron varios retos importantes:
 
